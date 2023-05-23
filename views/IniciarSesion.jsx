@@ -2,19 +2,27 @@ import { StyleSheet, Text, View, TextInput, Image, Button, Alert} from 'react-na
 import { StatusBar } from 'expo-status-bar';
 import LoginButtons from '../components/LoginButtons';
 import logoMhcc from '../assets/logos/logo-removebg.png';
+import MenuDesplegable from '../components/MenuDesplegable';
 
 const Separator = () => {
     return <View style={styles.separator} />;
   };
 
-export default function IniciarSesion() {
+export default function IniciarSesion({navigation}) {
 return (
+  <View>
+    <View>
+    {/* <MenuDesplegable /> */}
+    <Button
+        title="Inicio"
+        onPress={() => navigation.navigate('Inicio')}
+    />
+    <Button
+        title="Nosotros"
+        onPress={() => navigation.navigate('Nosotros')}
+    />
+    </View>
     <View style={styles.container}>
-    {/* <Button
-        style={styles.backButton}
-        title="Atras"
-        onPress={() => Alert.alert('Simple Button pressed')}
-    /> */}
     <Image
         style={styles.logo}
         source={logoMhcc}
@@ -38,8 +46,8 @@ return (
     <LoginButtons />
 
     <StatusBar style="auto" />
-    
     </View>
+  </View>
 );
 }
 
@@ -47,7 +55,7 @@ const styles = StyleSheet.create({
     container: {
       flex: 1,
       backgroundColor: '#f1f1f1',
-      paddingTop: 100,
+      paddingTop: 40,
       alignItems: 'center'
       // justifyContent: 'center',
     },

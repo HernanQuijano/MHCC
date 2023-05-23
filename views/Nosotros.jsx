@@ -1,42 +1,43 @@
 import React, { useState } from "react";
-import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet, Image, Button} from "react-native";
 import logo from "../assets/logos/logo-removebg.png";
+import MenuDesplegable from "../components/MenuDesplegable";
 
-export default function Nosotros(){
+export default function Nosotros({navigation}) {
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
-  };
   return (
-    <View style={styles.container}>
-      <TouchableOpacity onPress={toggleDropdown} style={styles.button}>
-        <Text style={styles.buttonText}>Menu</Text>
-      </TouchableOpacity>
-      {isOpen && (
-        <View style={styles.dropdown}>
-          <Text style={styles.dropdownText}>Inicio</Text>
-          <Text style={styles.dropdownText}>Productos</Text>
-          <Text style={styles.dropdownText}>Contactos</Text>
-        </View>
-      )}
-      <Image
-        style={styles.logo}
-        source={logo}
-        />
-      <Text style={styles.Text}>
-        Leiner Libardo Mendoza Rodriguez 160004249.{"\n"}Hernan David Quijano
-        Gonzales 160004224.{"\n"}
-        Tecnologías avanzadas {"\n"}
-        {"\n"}
-        Bienvenidos a nuestra aplicación. Somos un museo de la historia de la
-        computación en colombia.
-      </Text>
-      <Text style={styles.Text}>
-        Aca se podra encontrar la historia de la computación en colombia y la
-        venta de articulos relacionados a la misma, tambien articulos que sean
-        retros
-      </Text>
+    <View>
+      <View>
+      {/* <MenuDesplegable/> */}
+      <Button
+            title="Inicio"
+            onPress={() => navigation.navigate('Inicio')}
+      />
+      <Button
+            title="Iniciar Sesion"
+            onPress={() => navigation.navigate('Iniciar Sesion')}
+      />
+      </View>
+      <View style={styles.container}>
+        <Image
+          style={styles.logo}
+          source={logo}
+          />
+        <Text style={styles.Text}>
+          Leiner Libardo Mendoza Rodriguez 160004249.{"\n"}Hernan David Quijano
+          Gonzales 160004224.{"\n"}
+          Tecnologías avanzadas {"\n"}
+          {"\n"}
+          Bienvenidos a nuestra aplicación. Somos un museo de la historia de la
+          computación en colombia.
+        </Text>
+        <Text style={styles.Text}>
+          Aca se podra encontrar la historia de la computación en colombia y la
+          venta de articulos relacionados a la misma, tambien articulos que sean
+          retros
+        </Text>
+      </View>
     </View>
   );
 };
@@ -66,7 +67,8 @@ const styles = StyleSheet.create({
     fontSize: 16,
     marginBottom: 8,
     lineHeight: 24,
-    fontFamily: "Cochin"
+    fontFamily: "Cochin",
+    color: "#000"
   },
   button: {
     backgroundColor: "#f2f2f2",
@@ -79,15 +81,5 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "bold",
     color: "#333"
-  },
-  dropdown: {
-    backgroundColor: "#f2f2f2",
-    padding: 5,
-    borderRadius: 5
-  },
-  dropdownText: {
-    fontSize: 14,
-    color: "#333",
-    fontFamily: "Cochin"
   }
 });
