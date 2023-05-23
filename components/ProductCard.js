@@ -1,8 +1,8 @@
 import * as React from "react";
 import { View, Text, Image, TouchableOpacity } from "react-native";
-import { products } from "../data/products";
+// import { products } from "../products";
 import { AntDesign } from "@expo/vector-icons";
-// import { useColorScheme } from "nativewind";
+import { useColorScheme } from "nativewind";
 
 export default function ProductCard({
   image,

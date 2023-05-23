@@ -14,9 +14,13 @@ return (
     <View>
     {/* <MenuDesplegable /> */}
     <Button
-        title="Inicio"
-        onPress={() => navigation.navigate('Inicio')}
+        title="Tienda"
+        onPress={() => navigation.navigate('Tienda')}
     />
+    <Button
+            title="Museo"
+            onPress={() => navigation.navigate('Museo')}
+      />
     <Button
         title="Nosotros"
         onPress={() => navigation.navigate('Nosotros')}

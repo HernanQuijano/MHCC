@@ -1,7 +1,7 @@
 import * as React from "react";
 import { FlatList } from "react-native";
 import { products } from "../data/products";
-import ProductCard from "./ProductCard";
+import ProductCard from "./ProductCard2";
 
 export default function ProductsList() {
   return (

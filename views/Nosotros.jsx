@@ -4,15 +4,17 @@ import logo from "../assets/logos/logo-removebg.png";
 import MenuDesplegable from "../components/MenuDesplegable";
 
 export default function Nosotros({navigation}) {
-  const [isOpen, setIsOpen] = useState(false);
-
   return (
     <View>
       <View>
       {/* <MenuDesplegable/> */}
       <Button
-            title="Inicio"
-            onPress={() => navigation.navigate('Inicio')}
+            title="Tienda"
+            onPress={() => navigation.navigate('Tienda')}
+      />
+      <Button
+            title="Museo"
+            onPress={() => navigation.navigate('Museo')}
       />
       <Button
             title="Iniciar Sesion"
