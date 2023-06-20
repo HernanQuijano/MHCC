@@ -3,23 +3,11 @@ import MenuDesplegable from '../components/MenuDesplegable';
 import ProductsList from '../components/ProductsList';
 
 
-export default function Tienda({navigation}){
+export default function Tienda(){
     
     return(
     <View /*style={styles.container}*/>
-        {/* <MenuDesplegable /> */}
-        <Button
-            title="Museo"
-            onPress={() => navigation.navigate('Museo')}
-        />
-        <Button
-            title="Nosotros"
-            onPress={() => navigation.navigate('Nosotros')}
-        />
-        <Button
-            title="Iniciar Sesion"
-            onPress={() => navigation.navigate('Iniciar Sesion')}
-        />
+        <MenuDesplegable />
         <ProductsList />
     </View>
     )

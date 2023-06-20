@@ -3,23 +3,11 @@ import { View, Text, StyleSheet, Image, Button} from "react-native";
 import logo from "../assets/logos/logo-removebg.png";
 import MenuDesplegable from "../components/MenuDesplegable";
 
-export default function Nosotros({navigation}) {
+export default function Nosotros() {
   return (
     <View>
       <View>
-      {/* <MenuDesplegable/> */}
-      <Button
-            title="Tienda"
-            onPress={() => navigation.navigate('Tienda')}
-      />
-      <Button
-            title="Museo"
-            onPress={() => navigation.navigate('Museo')}
-      />
-      <Button
-            title="Iniciar Sesion"
-            onPress={() => navigation.navigate('Iniciar Sesion')}
-      />
+      <MenuDesplegable/>
       </View>
       <View style={styles.container}>
         <Image
@@ -46,8 +34,7 @@ export default function Nosotros({navigation}) {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    padding: 40,
+    padding: 16,
     backgroundColor: "#f1f1f1",
     alignItems: "center",
     // alignItems: "flex-start",
@@ -62,22 +49,22 @@ const styles = StyleSheet.create({
     fontSize: 25,
     fontWeight: "bold",
     marginBottom: 16,
-    textAlign: "center",
-    fontFamily: "Cochin"
+    textAlign: "center"
+    // fontFamily: "Arial"
   },
   Text: {
     fontSize: 16,
     marginBottom: 8,
     lineHeight: 24,
-    fontFamily: "Cochin",
+    // fontFamily: "Arial",
     color: "#000"
   },
   button: {
     backgroundColor: "#f2f2f2",
     paddingVertical: 10,
     paddingHorizontal: 20,
-    borderRadius: 5,
-    fontFamily: "Cochin"
+    borderRadius: 5
+    // fontFamily: "Arial"
   },
   buttonText: {
     fontSize: 16,

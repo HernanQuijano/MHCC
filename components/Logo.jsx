@@ -1,5 +1,7 @@
-const Logo = () =>{
+export const Logo = () =>{
     return(
 
     );
 }
+
+export default Logo;

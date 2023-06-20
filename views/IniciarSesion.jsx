@@ -12,19 +12,7 @@ export default function IniciarSesion({navigation}) {
 return (
   <View>
     <View>
-    {/* <MenuDesplegable /> */}
-    <Button
-        title="Tienda"
-        onPress={() => navigation.navigate('Tienda')}
-    />
-    <Button
-            title="Museo"
-            onPress={() => navigation.navigate('Museo')}
-      />
-    <Button
-        title="Nosotros"
-        onPress={() => navigation.navigate('Nosotros')}
-    />
+    <MenuDesplegable />
     </View>
     <View style={styles.container}>
     <Image
@@ -46,7 +34,7 @@ return (
         onPress={() => Alert.alert('Simple Button pressed')}
     />
     <Separator />
-
+    
     <LoginButtons />
 
     <StatusBar style="auto" />

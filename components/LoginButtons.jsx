@@ -2,7 +2,7 @@ import React from 'react';
 import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
 import { MaterialIcons } from 'react-native-vector-icons';
 
-const LoginButtons = () => {
+export const LoginButtons = () => {
   const handleGmailLogin = () => {
     // Lógica para iniciar sesión con Gmail
     console.log('Iniciar sesión con Gmail');

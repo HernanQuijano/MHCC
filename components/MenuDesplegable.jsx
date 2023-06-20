@@ -1,10 +1,12 @@
 import { Button } from '@react-native-material/core';
 import React, { useState, useRef } from 'react';
 import { View, TouchableOpacity, Animated, Text } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
-export default function MenuDesplegable({navigation}){
+export function MenuDesplegable(){
+  const navigation = useNavigation();
   const [isExpanded, setIsExpanded] = useState(false);
-  const menuHeight = useRef(new Animated.Value(0)).current;
+  const  menuHeight = useRef(new Animated.Value(0)).current;
 
   const toggleMenu = () => {
     setIsExpanded(!isExpanded);
@@ -22,20 +24,23 @@ export default function MenuDesplegable({navigation}){
       </TouchableOpacity>
 
       <Animated.View style={{ height: menuHeight, overflow: 'hidden' }}>
-        <TouchableOpacity >
-          <Button
-            title="Inicio" onPress={() => navigation.navigate('Inicio')}
-          />
+        <TouchableOpacity onPress={() => navigation.navigate('Inicio')}>
+            <Text> Inicio </Text> 
         </TouchableOpacity>
 
+        <TouchableOpacity onPress={()=>navigation.navigate('Museo')}>
+              <Text>Museo</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={()=>navigation.navigate('Tienda')}>
+              <Text>Tienda</Text>
+        </TouchableOpacity>
         <TouchableOpacity onPress={()=>navigation.navigate('Nosotros')}>
-          <Text>Nosotros</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity onPress={()=>navigation.navigate('Iniciar Sesion')}>
-          <Text>Iniciar Sesion</Text>
+                <Text>Nosotros</Text>
         </TouchableOpacity>
       </Animated.View>
     </View>
   );
 };
+
+export default MenuDesplegable;

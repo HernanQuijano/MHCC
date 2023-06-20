@@ -5,7 +5,7 @@ import IniciarSesion from './views/IniciarSesion';
 import Nosotros from './views/nosotros';
 import Tienda from './views/Tienda';
 import Museo from './views/Museo'
-// import MenuDesplegable from './components/MenuDesplegable';
+import MenuDesplegable from './components/MenuDesplegable';
 
 const Stack = createNativeStackNavigator();
 
@@ -13,8 +13,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        
-        <Stack.Screen name="Iniciar Sesion" component={IniciarSesion} />
+        <Stack.Screen name="Inicio" component={IniciarSesion} />
         <Stack.Screen name="Tienda" component={Tienda}/>
         <Stack.Screen name="Museo" component={Museo}/>
         <Stack.Screen name="Nosotros" component={Nosotros}/>
