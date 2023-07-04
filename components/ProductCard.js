@@ -1,8 +1,7 @@
 import * as React from "react";
 import { View, Text, Image, TouchableOpacity } from "react-native";
-// import { products } from "../products";
 import { AntDesign } from "@expo/vector-icons";
-import { useColorScheme } from "nativewind";
+// import { useColorScheme } from "nativewind";
 
 export default function ProductCard({
   image,
@@ -12,7 +11,7 @@ export default function ProductCard({
   description,
 }) {
   const [count, setCount] = React.useState(1);
-  const { colorScheme } = useColorScheme();
+  // const { colorScheme } = useColorScheme();
   return(
     <View style={{ width: "100%", backgroundColor: "white", borderRadius: 20, padding: 10, marginBottom: 10, backgroundColor: colorScheme === 'dark' ? 'rgba(125, 125, 125, 0.1)' : 'white' }}>
       <View style={{backgroundColor: "white", borderRadius: 20}}>

@@ -1,14 +1,22 @@
-import { StyleSheet, Text, View, TextInput, Image, Button, Alert} from 'react-native';
-import MenuDesplegable from '../components/MenuDesplegable';
-import ProductsList from '../components/ProductsList';
+import {View, StyleSheet} from 'react-native';
+import {MenuDesplegable, ProductsList} from '../components';
 
-
-export default function Tienda(){
+export function Tienda(){
     
     return(
-    <View /*style={styles.container}*/>
+    <View style={styles.container}>
         <MenuDesplegable />
         <ProductsList />
     </View>
     )
 }
+
+const styles = StyleSheet.create({
+    container: {
+      padding: 10,
+      marginBottom:100,
+      alignItems: 'center'
+    }
+})
+
+export default Tienda;

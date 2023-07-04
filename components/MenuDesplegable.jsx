@@ -1,6 +1,5 @@
-import { Button } from '@react-native-material/core';
 import React, { useState, useRef } from 'react';
-import { View, TouchableOpacity, Animated, Text } from 'react-native';
+import { View, TouchableOpacity, Animated, Text, Image} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 export function MenuDesplegable(){
@@ -11,7 +10,7 @@ export function MenuDesplegable(){
   const toggleMenu = () => {
     setIsExpanded(!isExpanded);
     Animated.timing(menuHeight, {
-      toValue: isExpanded ? 0 : 200, // Altura del menú cuando está expandido
+      toValue: isExpanded ? 0 : 90, // Altura del menú cuando está expandido
       duration: 300, // Duración de la animación en milisegundos
       useNativeDriver: false,
     }).start();
@@ -20,13 +19,13 @@ export function MenuDesplegable(){
   return (
     <View>
       <TouchableOpacity onPress={toggleMenu}>
-        <Text>Menu2</Text>
+      <Image source={require('../assets/menu.png')} style={{ width: 40, height: 40, alignItems: 'center' }}/>
       </TouchableOpacity>
 
-      <Animated.View style={{ height: menuHeight, overflow: 'hidden' }}>
-        <TouchableOpacity onPress={() => navigation.navigate('Inicio')}>
+      <Animated.View style={{ height: menuHeight, overflow: 'hidden', alignItems: 'center'}} >
+        {/* <TouchableOpacity onPress={() => navigation.navigate('Inicio')}>
             <Text> Inicio </Text> 
-        </TouchableOpacity>
+        </TouchableOpacity> */}
 
         <TouchableOpacity onPress={()=>navigation.navigate('Museo')}>
               <Text>Museo</Text>
